@@ -14,6 +14,7 @@ import { elevenlabs } from "@/features/elevenlabs/elevenlabs";
 import { coqui } from "@/features/coqui/coqui";
 import { speecht5 } from "@/features/speecht5/speecht5";
 import { openaiTTS } from "@/features/openaiTTS/openaiTTS";
+import { PiperTTS } from "@/features/pipertts/pipertts";
 import { config } from "@/utils/config";
 import { cleanTalk } from "@/utils/cleanTalk";
 import { processResponse } from "@/utils/processResponse";
@@ -417,6 +418,10 @@ export class Chat {
         }
         case 'openai_tts': {
           const voice = await openaiTTS(talk.message);
+          return voice.audio;
+        }
+        case 'pipertts': {
+          const voice = await PiperTTS(talk.message);
           return voice.audio;
         }
       }

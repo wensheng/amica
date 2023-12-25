@@ -149,6 +149,7 @@ export function getIconFromPage(page: string): JSX.Element {
     case 'speecht5_settings':   return <AdjustmentsHorizontalIcon className="h-5 w-5 flex-none text-gray-800" aria-hidden="true" />;
     case 'coqui_settings':      return <AdjustmentsHorizontalIcon className="h-5 w-5 flex-none text-gray-800" aria-hidden="true" />;
     case 'openai_tts_settings': return <AdjustmentsHorizontalIcon className="h-5 w-5 flex-none text-gray-800" aria-hidden="true" />;
+    case 'pipertts_settings':   return <AdjustmentsHorizontalIcon className="h-5 w-5 flex-none text-gray-800" aria-hidden="true" />;
 
     case 'stt_backend':         return <PencilSquareIcon className="h-5 w-5 flex-none text-gray-800" aria-hidden="true" />;
     case 'whisper_openai_settings':  return <AdjustmentsHorizontalIcon className="h-5 w-5 flex-none text-gray-800" aria-hidden="true" />;
@@ -202,6 +203,7 @@ function getLabelFromPage(page: string): string {
     case 'stt_backend':             return t('STT Backend');
     case 'whisper_openai_settings': return t("Whisper (OpenAI)");
     case 'whispercpp_settings':     return t("Whisper.cpp");
+    case 'pipertts_settings':     return t("Piper TTS");
   }
 
   throw new Error(`unknown page label encountered ${page}`);
